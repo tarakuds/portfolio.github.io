@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omotara Kudehinbu</title>
+    <style>
+        /*******
+                GENERAL
+
+        *********/
+        body{
+            width: 100%;
+            height: 20%;           
+        }
+        a{
+            color: #fff;
+            text-decoration: none;            
+        }
+        nav{
+            width: 20%;
+            padding: 5% 0; 
+        }
+        main{
+            width: 80%;
+        }
+        button{
+            background-color: rgb(49, 216, 208);
+            border: none;
+            color: #fff;
+            outline: none;
+            margin-top: 5%;
+            padding: 3% 10%;
+            border-radius: 15px 0px;
+            font-family: 'Roboto', sans-serif;
+            /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+        }
+        span{
+            margin: 0 5%;
+        }
+        section{
+            border: 2px solid rgb(49, 216, 208);
+            padding: 5%;
+            width: 90%;
+        }
+        table{
+            margin-top: 1.5%;
+            font-size: 1.5em;
+        }
+        tr{
+            margin: 5% 5%;
+        }
+        td{
+         width: 25%;
+        }
+        footer{
+            background-color: rgb(49, 216, 208) ;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            padding: 2% 0;
+            width: 100%;
+        }
+         /*******
+                MEDIA
+
+        *********/
+        @media (max-width: 450px){
+            .avatar{
+             width: 100%; 
+             height: 100%;
+            }
+            .heading{
+                font-size: 25px;
+            }
+            .sub-heading{
+                font-size: 15px;
+            }
+            .detail-font, table{
+                font-size: 1em;
+            }
+            nav{
+                display:inline-flex;
+                position: absolute;
+                bottom: 15%;
+                width: 95%;
+                margin-right: 2%;
+                padding: 3% 0;
+                font-size: 0.5em;
+            }
+            .nav-bar{
+                margin: 2%;
+                height: 5vh;
+                width: 10%;
+                font-size: 1em;
+            }
+            .detail-font{
+                font-size: 1em;
+            }
+            table{
+                font-size: 1em;
+            }
+            main{
+                padding-left: 15%;
+                text-align: center;
+                width: 100%;
+
+            }
+            #arrow{
+            width: 30%;
+            padding: 2%;
+            }
+            #left{
+                display: none;
+                position: relative;
+                top: 50%;
+                left: 0;
+            }
+            #bio-data p{
+                font-family: sans-serif;
+            }
+            #experience img{
+                display: none;
+                top:5%;
+            }
+        }
+        @media (max-width: 768px){
+            #arrow{
+            width: 10vw;
+            }
+            /* #education{
+                height: 120%;
+            } */
+            img#left{
+                position: absolute;
+                top: 220%;
+                left: 3%;
+            }
+            
+            #experience img{
+                top:-55%;
+                left: 0;
+            }
+            /* .detail-font{
+                font-size: 1em;
+            } */
+            table{
+                font-size: 1em;
+            }
+        }
+
+        /*******
+                REUSABLE CLASSES
+
+        *********/
+        .margin-top{
+            margin-top: 5%;
+        }
+        .align{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .heading{
+            font-size: 2.5em;
+            /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+            font-family: 'Roboto', sans-serif;
+            font-weight: 800;
+            margin: 0;
+        }
+        .sub-heading{
+            font-size: 1.5em;
+            /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+        }
+        .center{
+            text-align: center;
+            padding: 0 10%;
+        }
+        .detail-font{
+            font-size: 1.5em;
+        }
+        .weight{
+            font-weight: 550;
+        }
+        .font{
+            /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
+            font-family: 'Roboto', sans-serif;
+        }
+        .color{
+            color: darkturquoise;
+        }
+
+        /*******
+                SPECIFIC CLASSES & ID
+        *********/
+        .nav-bar{
+            background-color: rgb(49, 216, 208);
+            height: 10vh;
+            margin-top: 15%;
+            text-align: center;
+           border-radius: 15px 0px;
+           outline:none;
+            width: 75%;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .main-container{
+            display: inline-flex;
+            height: 95vh;
+            width: 100%;
+            
+        }
+        .avatar{
+            background-color:blue;
+             border-radius:50% 50% 50% 0;
+             width: 30%; 
+             height: 30%;
+             margin: auto;
+        }
+        #arrow{
+            border-radius: 24px;
+            background: #c9d0d4;
+            box-shadow:  19px -19px 39px #abb1b4, 
+             -19px 19px 39px #e7eff4;
+
+
+            background-color: rgb(153, 149, 149);
+            position: fixed;
+            bottom: 2%;
+            right: 2%;
+            width: 5vw;
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline:none;
+            /* box-shadow */
+
+        }
+        .intro{       
+            width: 60%;
+            padding: 10%;
+            text-align: center;
+        }
+        .socials{
+            margin-top:5%;
+        }
+        #education{
+            height: 60vh;
+        }
+        #right{
+            position: relative;
+             top: -270%;
+            left: 50%;
+            width: 50%;
+        }
+        #left{
+            position: relative;
+            bottom: 350px;
+            left: -5%;
+            width: 50%;
+        }
+        #experience{
+            height: 60vh;
+        }
+        #experience h3{
+            text-align: center;
+        }
+        #experience img{
+            position: relative;
+            bottom: 350px;
+            left: 50%;
+            width: 50%;
+        }
+
+        #skills .heading{
+            padding: 0;
+            margin: auto;
+        }
+    </style>
+    <script
+    src="https://kit.fontawesome.com/9334832b2b.js"
+    crossorigin="anonymous"
+  ></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="main-container" id="main">
+        <nav>
+            <div class="nav-bar"><a href="#bio-data">Bio Data</a>
+                           </div>
+            <div class="nav-bar"><a href="#education">Education</a></div>
+            <div class="nav-bar"><a href="#experience">Experience</a></div>
+            <div class="nav-bar"><a href="#skills">Skills</a></div>
+        </nav>
+        <main>
+            <div class="intro">
+                <img class="avatar" src="https://res.cloudinary.com/dfg1bmlsk/image/upload/v1603649639/cover_bbrkru.jpg">
+                <h3 class="heading">KUDEHINBU OMOTARA</h3>
+                <p class="sub-heading">Software / Web Developer</p>
+                <button type="submit"><a href="#bio-data">View CV</a></button>
+                <div class="socials">
+                <span><a class="fab fa-linkedin-in color" href="https://www.linkedin.com/in/omotara-kudehinbu-281124145/"></a></span>
+               <span><a class="fab fa-twitter color" href="https://twitter.com/tarakuds"></a></span>
+               <span><a class="fab fa-github color" href="https://github.com/tarakuds"></a></span>
+            </div>
+        </div>
+        </main>
+    </div>
+    <section id="bio-data">
+        <h3 class="heading color center">BIO DATA</h3>
+        <div>
+            <h5 class="sub-heading">Profile</h5>
+        <p class="font">A Website Developer/Designer with years of experience working on diverse
+            projects having an eye for design and
+            aesthetics.
+            Creative and Innovative, always willing to
+            learn at all points.</p>
+        </div>
+
+        <div>
+            <h5 class="sub-heading">Personal Information</h5>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="weight">Gender</td>
+                        <td></td>
+                        <td>Female</td>
+                    </tr>
+                    <tr>
+                        <td class="weight">Email</td>
+                        <td></td>
+                        <td>omotarakuds@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td class="weight">Phone</td>
+                        <td></td>
+                        <td>08022925491</td>
+                    </tr>
+                    <tr>
+                        <td class="weight">Nationality</td>
+                        <td></td>
+                        <td>Nigerian</td>
+                    </tr>
+                    <tr>
+                        <td class="weight">Address</td>
+                        <td></td>
+                        <td>Amuwo Odofin</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+
+    </section>
+    <section id="education">
+        <h3 class="heading color center">EDUCATION</h3>
+        
+        <div class="center margin-top">
+            <h5 class="sub-heading">Yaba College Of Technology</h5>
+            <p class="weight font">HND - Computer Engineering  - 2015</p>
+            <label>(Upper Credit)</label>
+        </div>
+        <div class="margin-top center">
+            <h5 class="sub-heading ">University Of Lagos</h5>
+            <p class="weight font">BSc - Applied Physics  - 2017</p>
+            <label>(Second Class Upper)</label>
+        </div>
+        <img id="left" src="https://res.cloudinary.com/dfg1bmlsk/image/upload/v1603702545/GettyImages-1062799214-removebg-preview_bhfxcv.png" alt="graduation cap image">
+    </section>
+    <section id="experience">
+        <h3 class="heading color center" ">EXPERIENCE</h3>
+        
+        <div class="margin-top">
+            <h5 class="sub-heading">Web Developer</h5>
+            <p>Sqsit Studios  - 2019</p>
+        </div>
+        <div>
+            <h5 class="sub-heading">Web Developer / Designer</h5>
+            <p>WaveUs Transit  - 2020</p>
+        </div>
+        <div>
+            <h5 class="sub-heading">Web Developer</h5>
+            <p>Github Projects  - 2020</p>
+        </div>
+        <img src="https://res.cloudinary.com/dfg1bmlsk/image/upload/v1603701194/2-removebg-preview_qsar5b.png" alt="">
+
+    </section>
+    <section id="skills">
+        <h3 class="color heading center">SKILLS AND PROFICIENCY</h3>
+        <div class="margin-top">
+            <table  style="width: 100%; margin: 0; padding: 0;">
+                <tr>
+                    <td>HTML</td>
+                    <td></td>
+                    <td>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td></td>
+                    <td>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Javascript</td>
+                    <td></td>
+                    <td>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Github VC</td>
+                    <td></td>
+                    <td>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mobile Responsiveness</td>
+                    <td></td>
+                    <td>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>SEO Optimization</td>
+                    <td></td>
+                    <td>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Design and Aesthetics</td>
+                    <td></td>
+                    <td>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Figma</td>
+                    <td></td>
+                    <td>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PHP</td>
+                    <td></td>
+                    <td>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td></td>
+                    <td>
+                        <i class="fas fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>React JS</td>
+                    <td></td>
+                    <td>
+                        <i class="fas fa-circle color"></i>
+                        <i class="fas fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>NodeJs</td>
+                    <td></td>
+                    <td>
+                        <i class="fas fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                        <i class="far fa-circle color"></i>
+                    </td>
+                </tr>
+            </table>
+        </div>
+            
+    </section>
+
+    <div id="arrow"><a href="#main">UP</a></div>
+
+    <footer>
+        &copy; kudehinbu omotara 2020
+    </footer>
+    
+</body>
+</html>
